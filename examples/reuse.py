@@ -1,10 +1,9 @@
 import math, pygame, random
 from models.vector import Vector
 
-from services.statics import BLUE, YELLOW
 from models.objects import Circle
 from models.environment import Env
-from services.utils import randomInt
+from services.utils import randomInt, randomColor
 
 WIDTH = 640
 HEIGHT = 480
@@ -39,9 +38,10 @@ for i in range(n_balls):
         radius * 10 / randomInt(2, 5),
         -math.pi / 2 + (random.random() - 0.5),
         mass=0,
-        gravity=0,
+        gravity=0.06,
         bounce=-0,
-        friction=0
+        friction=0,
+        color=randomColor()
     )
 
     env.addEntity(ball, 'ball_{}'.format(i))

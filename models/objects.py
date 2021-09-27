@@ -4,6 +4,22 @@ from services.statics import BLACK
 
 import pygame
 
+class Line():
+    def __init__(self,
+                p1: Vector,
+                p2: Vector,
+                color: tuple = BLACK):
+
+        self.p1 = p1
+        self.p2 = p2
+        self.color = color
+
+    def draw(self, screen):
+        pygame.draw.line(screen, self.color, self.p1.coordinates, self.p2.coordinates)
+
+    def update(self):
+        pass
+
 class Triangle(Particle):
     def __init__(self,
                 tip: Vector,

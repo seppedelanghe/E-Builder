@@ -4,11 +4,13 @@ from examples.bounce import env as bounce_env
 from examples.reuse import env as reuse_env
 from examples.edge import env as edge_env
 from examples.removal import env as removal_env
+from examples.springs import env as spring_env
 
 
 #planet_env.start()
 #space_env.start()
 #bounce_env.start()
-#reuse_env.start()
-edge_env.start()
+reuse_env.start()
+#edge_env.start()
 #removal_env.start()
+#spring_env.start()

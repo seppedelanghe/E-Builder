@@ -17,7 +17,7 @@ def events():
 def update(entities: dict):
     drop = []
     for (key, e) in entities.items():
-        if e.x > WIDTH + (radius * 2) or e.x < 0 - (radius * 2) or e.y < 0 - (radius * 2) or e.y > HEIGHT + (radius * 2):
+        if e.x > WIDTH + (e.radius * 2) or e.x < 0 - (e.radius * 2) or e.y < 0 - (e.radius * 2) or e.y > HEIGHT + (e.radius * 2):
             drop.append(key)
 
     for key in drop:
