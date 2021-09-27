@@ -3,21 +3,10 @@ import math, pygame, random
 from services.statics import BLUE, YELLOW
 from models.objects import Circle
 from models.environment import Env
-from services.utils import randomInt
+from services.utils import randomFloat, randomInt
 
 WIDTH = 640
 HEIGHT = 480
-
-def reuseDeadBall(ball: Circle):
-    if ball.x > WIDTH + radius:
-        ball.position.x = 0 - radius
-    if ball.y > HEIGHT + radius:
-        ball.position.y = 0 - radius
-
-    if ball.x < 0 - radius:
-        ball.position.x = WIDTH + radius
-    if ball.y < 0 - radius:
-        ball.position.y = HEIGHT + radius
 
 
 def events():
@@ -26,13 +15,21 @@ def events():
             env.running = False 
 
 def update(entities: dict):
+    drop = []
     for (key, e) in entities.items():
-        reuseDeadBall(e)
+        if e.x > WIDTH + (radius * 2) or e.x < 0 - (radius * 2) or e.y < 0 - (radius * 2) or e.y > HEIGHT + (radius * 2):
+            drop.append(key)
+
+    for key in drop:
+        entities.pop(key)
+
+    if len(entities) == 0:
+        env.running = False
 
 
 env = Env(update, events, size=(WIDTH, HEIGHT))
 
-n_balls = 3
+n_balls = 100
 
 for i in range(n_balls):
     radius = randomInt(3, 5)
@@ -40,8 +37,8 @@ for i in range(n_balls):
         WIDTH / 2,
         HEIGHT,
         radius,
-        randomInt(2, 5),
-        -math.pi / 2 + random.random(),
+        randomInt(4, 6),
+        -math.pi / 2 + (randomFloat(1, 4) - 2),
         mass=0,
         gravity=0,
         bounce=-0,

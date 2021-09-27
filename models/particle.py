@@ -26,6 +26,15 @@ class Particle:
     def y(self):
         return self.position.y
 
+    def setX(self, x):
+        self.position.x = x
+
+    def setY(self, y):
+        self.position.y = y
+
+    def setPosition(self, coor: Vector):
+        self.position = coor
+
     @property
     def coordinates(self):
         return self.position.coordinates

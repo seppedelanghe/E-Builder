@@ -1,4 +1,5 @@
 import math, pygame, random
+from models.vector import Vector
 
 from services.statics import BLUE, YELLOW
 from models.objects import Circle
@@ -9,12 +10,8 @@ WIDTH = 640
 HEIGHT = 480
 
 def reuseDeadBall(ball: Circle):
-    x = ball.position.x
-    y = ball.position.y
-
-    if x > WIDTH + (radius * 2) or x < 0 - (radius * 2) or y < 0 - (radius * 2) or y > HEIGHT + (radius * 2):
-        ball.position.x = WIDTH / 2
-        ball.position.y = HEIGHT
+    if ball.x > WIDTH + (radius * 2) or ball.x < 0 - (radius * 2) or ball.y < 0 - (radius * 2) or ball.y > HEIGHT + (radius * 2):
+        ball.setPosition(Vector(WIDTH / 2, HEIGHT))
         ball.velocity.setLength(random.random() * 4 + 5)
         ball.velocity.setAngle(-math.pi / 2 + (random.random() - .5))
 
