@@ -205,7 +205,7 @@ Contributions are what make the open source community such an amazing place to l
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the GNU AFFERO GENERAL PUBLIC LICENSE License. See `LICENSE` for more information.
 
 <br>
 
