@@ -1,4 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -19,10 +18,8 @@
   <p align="center">
     Python based physics environment builder. Mainly build to create custom environments to train reinforcement learning models.
     <br />
-    <a href="https://github.com/seppedelanghe/E-Builder"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/seppedelanghe/E-Builder">View Demo</a>
+    <a href="#usage">View Example</a>
     ·
     <a href="https://github.com/seppedelanghe/E-Builder/issues">Report Bug</a>
     ·
@@ -219,13 +216,13 @@ Project Link: [https://github.com/seppedelanghe/E-Builder](https://github.com/se
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/seppedelanghe/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/seppedelanghe/e-builder?style=for-the-badge
 [contributors-url]: https://github.com/seppedelanghe/E-Builder/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/seppedelanghe/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/seppedelanghe/e-builder?style=for-the-badge
 [forks-url]: https://github.com/seppedelanghe/E-Builder/network/members
-[stars-shield]: https://img.shields.io/github/stars/seppedelanghe/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/seppedelanghe/e-builder?style=for-the-badge
 [stars-url]: https://github.com/seppedelanghe/E-Builder/stargazers
-[issues-shield]: https://img.shields.io/github/issues/seppedelanghe/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/seppedelanghe/e-builder?style=for-the-badge
 [issues-url]: https://github.com/seppedelanghe/E-Builder/issues
-[license-shield]: https://img.shields.io/github/license/seppedelanghe/repo.svg?style=for-the-badge
-[license-url]: https://github.com/seppedelanghe/E-Builder/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/seppedelanghe/e-builder?style=for-the-badge
+[license-url]: https://github.com/seppedelanghe/E-Builder/blob/master/LICENSE
