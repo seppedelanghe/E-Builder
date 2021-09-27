@@ -73,11 +73,8 @@ Mainly build to create custom environments to train reinforcement learning model
 
 __To use follow these steps.__
 
-<br>
-
 ### Installation
 
-<br>
 
 1. Clone the repo to folder ebuilder
    ```sh
@@ -99,8 +96,6 @@ __To use follow these steps.__
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-<br>
 
 ### Creating an environment
 
