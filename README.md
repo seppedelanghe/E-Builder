@@ -176,7 +176,9 @@ __More examples can be found in the `examples` folder or you can run them using 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/seppedelanghe/E-Builder/issues) for a list of proposed features (and known issues).
+Take a look at the project board [Version 1](https://github.com/seppedelanghe/E-Builder/projects/1) to see what features the project will have in the near future. \
+Or see the [open issues](https://github.com/seppedelanghe/E-Builder/issues) for a list of all things in progress (bug fixes, features and more).
+
 
 
 <br>
