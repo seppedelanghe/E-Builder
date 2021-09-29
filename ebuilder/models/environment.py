@@ -1,6 +1,6 @@
-from models.particle import Particle
-from models.objects import Circle, Rect
-from services.statics import *
+from ebuilder.models.particle import Particle
+from ebuilder.models.objects import Circle, Rect
+from ebuilder.services.statics import *
 import pygame
 
 class Env:

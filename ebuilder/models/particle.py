@@ -1,5 +1,5 @@
 import math
-from models.vector import Vector
+from ebuilder.models.vector import Vector
 
 class Particle:
     def __init__(self, 

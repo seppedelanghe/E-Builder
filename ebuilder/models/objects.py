@@ -1,6 +1,6 @@
-from models.vector import Vector
-from models.particle import Particle
-from services.statics import BLACK
+from ebuilder.models.vector import Vector
+from ebuilder.models.particle import Particle
+from ebuilder.services.statics import BLACK
 
 import pygame
 

@@ -1,8 +1,8 @@
 import pygame
 
-from models.objects import Triangle
-from models.vector import Vector
-from models.environment import Env
+from ebuilder.models.objects import Triangle
+from ebuilder.models.vector import Vector
+from ebuilder.models.environment import Env
 
 WIDTH = 640
 HEIGHT = 480

@@ -1,5 +1,5 @@
-from models.environment import Env
-from models.objects import Circle
+from ebuilder.models.environment import Env
+from ebuilder.models.objects import Circle
 
 import pygame, math
 

@@ -1,8 +1,8 @@
 import math, pygame
 
-from services.statics import BLUE, YELLOW
-from models.objects import Circle
-from models.environment import Env
+from ebuilder.services.statics import BLUE, YELLOW
+from ebuilder.models.objects import Circle
+from ebuilder.models.environment import Env
 
 WIDTH = 640
 HEIGHT = 480

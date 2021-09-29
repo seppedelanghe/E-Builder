@@ -1,10 +1,9 @@
 import math, pygame, random
 
-from services.statics import BLUE, YELLOW
-from models.objects import Circle, Line
-from models.vector import Vector
-from models.environment import Env
-from services.utils import randomFloat, spring
+from ebuilder.models.objects import Circle, Line
+from ebuilder.models.vector import Vector
+from ebuilder.models.environment import Env
+from ebuilder.services.utils import randomFloat, spring
 
 WIDTH = 640
 HEIGHT = 480

@@ -1,7 +1,7 @@
 import random
-from models.particle import Particle
-from models.vector import Vector
-from services.statics import *
+from ebuilder.models.particle import Particle
+from ebuilder.models.vector import Vector
+from ebuilder.services.statics import *
 
 def randomColor():
     colors = [BLACK, WHITE, BLUE, RED, GREEN, YELLOW]
