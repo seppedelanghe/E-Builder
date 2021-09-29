@@ -104,8 +104,8 @@ __To use follow these steps.__
 _Simple environment with 1 circle_
 
 ```python
-from models.environment import Env
-from models.objects import Circle
+from ebuilder.models.environment import Env
+from ebuilder.models.objects import Circle
 
 import pygame, math
 
