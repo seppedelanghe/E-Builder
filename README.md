@@ -59,8 +59,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Python based (bad) physics environment builder.
-Mainly build to create custom environments to train reinforcement learning models.
+Python based physics environment builder to be used to train AI Models.
+You could for example recreate a game you want to train an AI model for so you can easily make actions via code and read out a score/reward.
 
 ### Built With
 
