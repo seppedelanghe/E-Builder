@@ -9,7 +9,8 @@ class Env:
                 eventHandler,
                 size: tuple = (640, 480),
                 background: tuple = WHITE,
-                fps: int = 60):
+                fps: int = 60,
+                draw=True):
         
         self.update = updateHandler
         self.events = eventHandler
@@ -21,21 +22,43 @@ class Env:
         self.bg = background
 
         self.running = False
+        self.drawVisuals = draw
 
     def _draw(self):
         for (name, e) in self.entities.items():
-            e.update()
             e.draw(self.screen)
 
-    def start(self):
-        self.screen = pygame.display.set_mode(self.size)
-        self.clock = pygame.time.Clock()
+    def _updates(self):
+        for (name, e) in self.entities.items():
+            e.update()
 
-        self.running = True
-        pygame.init()
-        while self.running:
-            self._loop()
-        pygame.quit()
+    def start(self):
+        if self.drawVisuals:
+            self.screen = pygame.display.set_mode(self.size)
+            self.clock = pygame.time.Clock()
+            pygame.init()
+
+            self.running = True
+            while self.running:
+                self._loop()
+
+            pygame.quit()
+
+        else:
+            self.running = True
+            while self.running:
+                self._blindloop()
+
+    def _blindloop(self):
+        # Do user event handeling
+        self.events()
+
+        # Do user updates
+        self.update(self.entities)
+
+        # Update entities 
+        self._updates()
+
 
     def _loop(self):
         # Match set FPS
@@ -49,6 +72,9 @@ class Env:
 
         # Do updates
         self.update(self.entities)
+
+        # Update entities 
+        self._updates()
 
         # Draw entities
         self._draw()
