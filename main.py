@@ -7,12 +7,11 @@ from ebuilder.examples.removal import env as removal_env
 from ebuilder.examples.springs import env as spring_env
 from ebuilder.examples.simple import env as simple_env
 
-
 planet_env.start()
-space_env.start()
-bounce_env.start()
-reuse_env.start()
-edge_env.start()
-removal_env.start()
-spring_env.start()
-simple_env.start()
+# space_env.start()
+# bounce_env.start()
+# reuse_env.start()
+# edge_env.start()
+# removal_env.start()
+# spring_env.start()
+# simple_env.start()

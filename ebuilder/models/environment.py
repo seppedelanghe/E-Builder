@@ -9,7 +9,8 @@ class Env:
                 eventHandler,
                 size: tuple = (640, 480),
                 background: tuple = WHITE,
-                fps: int = 60):
+                fps: int = 60,
+                fpsCounter: bool = True):
         
         self.update = updateHandler
         self.events = eventHandler
@@ -18,6 +19,7 @@ class Env:
 
         self.size = size
         self.fps = fps
+        self.fpsCounter = fpsCounter
         self.bg = background
 
         self.running = False
@@ -26,6 +28,16 @@ class Env:
         for (name, e) in self.entities.items():
             e.update()
             e.draw(self.screen)
+
+        if self.fpsCounter:
+            self.display_fps()
+
+    def display_fps(self):
+        font = pygame.font.SysFont("Arial", 12)
+        fps = "FPS: " + str(int(self.clock.get_fps()))
+        
+        text_to_show = font.render(fps, 0, pygame.Color((0, 0, 0)))
+        self.screen.blit(text_to_show, (10, 10))
 
     def start(self):
         self.screen = pygame.display.set_mode(self.size)
@@ -39,8 +51,9 @@ class Env:
 
     def _loop(self):
         # Match set FPS
-        self.clock.tick(self.fps)
-
+        if self.fps > 0:
+            self.clock.tick(self.fps)
+            
         # Do event handeling
         self.events()
 
