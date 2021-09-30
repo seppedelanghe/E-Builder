@@ -59,8 +59,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Python based (bad) physics environment builder.
-Mainly build to create custom environments to train reinforcement learning models.
+Python based physics environment builder to be used to train AI Models.
+You could for example recreate a game you want to train an AI model for so you can easily make actions via code and read out a score/reward.
 
 ### Built With
 
@@ -104,8 +104,8 @@ __To use follow these steps.__
 _Simple environment with 1 circle_
 
 ```python
-from models.environment import Env
-from models.objects import Circle
+from ebuilder.models.environment import Env
+from ebuilder.models.objects import Circle
 
 import pygame, math
 
@@ -176,7 +176,9 @@ __More examples can be found in the `examples` folder or you can run them using 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/seppedelanghe/E-Builder/issues) for a list of proposed features (and known issues).
+Take a look at the project board [Version 1](https://github.com/seppedelanghe/E-Builder/projects/1) to see what features the project will have in the near future. \
+Or see the [open issues](https://github.com/seppedelanghe/E-Builder/issues) for a list of all things in progress (bug fixes, features and more).
+
 
 
 <br>
