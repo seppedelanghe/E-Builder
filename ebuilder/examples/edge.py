@@ -19,10 +19,8 @@ def reuseDeadBall(ball: Circle):
         ball.position.y = HEIGHT + radius
 
 
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False 
+def events(events):
+    pass
 
 def update(entities: dict):
     for (key, e) in entities.items():

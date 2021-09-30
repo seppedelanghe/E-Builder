@@ -8,10 +8,8 @@ WIDTH = 640
 HEIGHT = 480
 
 
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False 
+def events(events):
+    pass
 
 def update(entities: dict):
     drop = []

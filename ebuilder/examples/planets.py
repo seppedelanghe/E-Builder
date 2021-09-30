@@ -7,10 +7,8 @@ from ebuilder.models.environment import Env
 WIDTH = 640
 HEIGHT = 480
 
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False 
+def events(events):
+    pass
 
 def update(entities: list):
     planet = entities['planet']

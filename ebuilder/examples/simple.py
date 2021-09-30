@@ -16,10 +16,8 @@ For example:
 
 Events get triggered every frame, before updates.
 '''
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False 
+def events(events):
+    pass
 
 # Handle entity updates here
 '''

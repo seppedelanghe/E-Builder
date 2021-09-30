@@ -28,11 +28,8 @@ def edge(p: Circle):
         p.position.y = 0 + p.radius
         p.velocity.y = p.velocity.y * p.bounce
 
-
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False 
+def events(events):
+    pass
 
 def update(entities: dict):
     pA = entities['pA']

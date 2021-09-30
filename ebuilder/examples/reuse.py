@@ -15,10 +15,8 @@ def reuseDeadBall(ball: Circle):
         ball.velocity.setAngle(-math.pi / 2 + (random.random() - .5))
 
 
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False 
+def events(events):
+    pass
 
 def update(entities: dict):
     for (key, e) in entities.items():

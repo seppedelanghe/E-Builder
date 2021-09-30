@@ -1,5 +1,3 @@
-from ebuilder.models.particle import Particle
-from ebuilder.models.objects import Circle, Rect
 from ebuilder.services.statics import *
 import pygame
 
@@ -32,6 +30,14 @@ class Env:
         if self.fpsCounter:
             self.display_fps()
 
+    def _events(self):
+        events = pygame.event.get()
+        for event in events:
+            if event.type == pygame.QUIT:
+                self.running = False
+
+        self.events(events)
+
     def display_fps(self):
         font = pygame.font.SysFont("Arial", 12)
         fps = "FPS: " + str(int(self.clock.get_fps()))
@@ -55,7 +61,7 @@ class Env:
             self.clock.tick(self.fps)
             
         # Do event handeling
-        self.events()
+        self._events()
 
         # Set background
         self.screen.fill(self.bg)

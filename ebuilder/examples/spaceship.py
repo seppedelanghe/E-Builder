@@ -12,11 +12,8 @@ states = {
     'thrusting': 0,
 }
 
-def events():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            env.running = False
-
+def events(events):
+    for event in events:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 states['thrusting'] = 1
