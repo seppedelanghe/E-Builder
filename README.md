@@ -72,7 +72,7 @@ You could for example recreate a game you want to train an AI model for so you c
 
 ### Features
 
-Currently the project allows you modify the following things:
+Currently the project allows you to modify the following things:
 
 - Environment
   - screen size
