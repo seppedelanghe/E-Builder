@@ -47,7 +47,7 @@ class Triangle(Particle):
         leg1.setAngle(self.angle - (1 / 3) * 180)
         leg2.setAngle(self.angle + (1 / 3) * 180)
         
-        pygame.draw.lines(screen, BLACK, True, [
+        pygame.draw.lines(screen, self.color, True, [
             self.coordinates,
             self.position.v_add(leg1).coordinates,
             self.position.v_add(leg2).coordinates,
@@ -112,10 +112,6 @@ class Rect(Particle):
     def center(self):
         return (self.position.x, self.position.y)
 
-    @property
-    def points(self):
-        return (self.left, self.top, self.left + self.w, self.top + self.h)
-
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.coordinates)
 
@@ -138,17 +134,20 @@ class Rect(Particle):
         x = False
         y = False
 
-        if self.points[0] >= r1.points[0] and self.points[0] <= r1.points[2]:
+        if self.left >= r1.left and self.left <= r1.left + r1.w:
             x = True
 
-        if self.points[2] >= r1.points[0] and self.points[2] <= r1.points[2]:
+        right = self.left + self.w
+        if right <= r1.left and right >= r1.left + r1.w:
             x = True
 
-        if self.points[1] >= r1.points[1] and self.points[1] <= r1.points[3]:
+        
+        if self.top >= r1.top and self.top <= r1.top + r1.h:
             y = True
 
-        if self.points[3] >= r1.points[3] and self.points[3] <= r1.points[3]:
-            y = True
+        btm = self.top + self.h
+        if btm <= r1.top and btm >= r1.top + r1.h:
+            x = True
 
         return x and y
 
@@ -156,8 +155,8 @@ class Rect(Particle):
         cx = c1.position.x
         cy = c1.position.y
         
-        if cx + c1.radius >= self.points[0] and cx - c1.radius <= self.points[2]:
-            if cy + c1.radius >= self.points[1] and cy - c1.radius <= self.points[3]:
+        if cx + c1.radius >= self.left and cx - c1.radius <= self.left + self.w:
+            if cy + c1.radius >= self.top and cy - c1.radius <= self.top + self.h:
                 return True
         return False
 
@@ -165,7 +164,7 @@ class Rect(Particle):
         px = p1.position.x
         py = p1.position.y
         
-        if px >= self.points[0] and px <= self.points[2]:
-            if py >= self.points[1] and py <= self.points[3]:
+        if px >= self.left and px <= self.left + self.w:
+            if py >= self.top and py <= self.top + self.h:
                 return True
         return False

@@ -1,11 +1,10 @@
 import pygame, math
 
 from ebuilder.models.objects import Triangle, Rect
-from ebuilder.models.particle import Particle
 from ebuilder.models.vector import Vector
 from ebuilder.models.environment import Env
-from ebuilder.services.utils import randomColor, randomInt
-from ebuilder.services.statics import YELLOW
+from ebuilder.services.utils import randomInt
+from ebuilder.services.statics import BLACK, YELLOW
 
 WIDTH = 320
 HEIGHT = 480
@@ -92,7 +91,7 @@ def update(entities: dict):
 
 
 nose = Vector(WIDTH * 0.1, HEIGHT / 2)
-bird = Triangle(nose, 10, 2, 0, gravity=0.1, friction=0.03)
+bird = Triangle(nose, 10, 2, 0, gravity=0.1, friction=0.03, color=BLACK)
 
 env = Env(update, events, size=(WIDTH, HEIGHT), fps=30)
 
