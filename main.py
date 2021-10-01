@@ -8,13 +8,12 @@ from ebuilder.examples.springs import env as spring_env
 from ebuilder.examples.simple import env as simple_env
 from ebuilder.examples.flappy import env as flappy_env
 
-# planet_env.start()
-# space_env.start()
-# bounce_env.start()
-# reuse_env.start()
-# edge_env.start() 
-# removal_env.start()
-# spring_env.start()
-# simple_env.start()
-
+planet_env.start()
+space_env.start()
+bounce_env.start()
+reuse_env.start()
+edge_env.start() 
+removal_env.start()
+spring_env.start()
+simple_env.start()
 flappy_env.start()
