@@ -80,8 +80,10 @@ class Circle(Particle):
 
 class Rect(Particle):
     def __init__(self,
-                x1: float, y1:float,
-                x2: float, y2: float, 
+                left: float,
+                top: float,
+                width: float,
+                height: float,
                 speed: float,
                 direction: float,
                 mass:float = 0,
@@ -90,32 +92,35 @@ class Rect(Particle):
                 friction:float = 0,
                 color: tuple = BLACK):
 
-        x = x2 - x1
-        y = y2 - y1
+        x = left + (width / 2) 
+        y = top + (height / 2) 
+
         super().__init__(x, y, speed, direction, mass, gravity, bounce, friction)
 
-        self.x1 = x1
-        self.x2 = x2
-        self.y1 = y1
-        self.y2 = y2
+        self.w = width
+        self.h = height
+        self.left = left
+        self.top = top
         
         self.color = color
 
     @property
-    def width(self):
-        return self.x2 - self.x1
-
-    @property
-    def height(self):
-        return self.y2 - self.y1
-
-    @property
     def coordinates(self):
-        return (self.x1, self.y1, self.x2, self.y2)
+        return ((self.left, self.top), (self.w, self.h))
 
     @property
     def center(self):
-        return (self.position.x, self.position._y)
+        return (self.position.x, self.position.y)
+
+    def draw(self, screen):
+        pygame.draw.rect(screen, self.color, self.coordinates)
+
+    def update(self):
+        old = (self.x, self.y)
+        super().update()
+
+        self.left += self.x - old[0]
+        self.top += self.y - old[1]
 
     def collisionCircle(self, c1):
         cx = c1.position.x
