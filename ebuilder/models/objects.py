@@ -112,6 +112,10 @@ class Rect(Particle):
     def center(self):
         return (self.position.x, self.position.y)
 
+    @property
+    def points(self):
+        return (self.left, self.top, self.left + self.w, self.top + self.h)
+
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.coordinates)
 
@@ -122,20 +126,46 @@ class Rect(Particle):
         self.left += self.x - old[0]
         self.top += self.y - old[1]
 
+    def collision(self, p):
+        if type(p) == Circle:
+            return self.collisionCircle(p)
+        elif type(p) == Rect:
+            return self.collisionRect(p)
+        else:
+            return self.collisionParticle(p)
+
+    def collisionRect(self, r1):
+        x = False
+        y = False
+
+        if self.points[0] >= r1.points[0] and self.points[0] <= r1.points[2]:
+            x = True
+
+        if self.points[2] >= r1.points[0] and self.points[2] <= r1.points[2]:
+            x = True
+
+        if self.points[1] >= r1.points[1] and self.points[1] <= r1.points[3]:
+            y = True
+
+        if self.points[3] >= r1.points[3] and self.points[3] <= r1.points[3]:
+            y = True
+
+        return x and y
+
     def collisionCircle(self, c1):
         cx = c1.position.x
-        cy = c1.position._y
+        cy = c1.position.y
         
-        if cx + c1.radius >= self.x1 and cx - c1.radius <= self.x2:
-            if cy + c1.radius >= self.y1 and cy - c1.radius <= self.y2:
+        if cx + c1.radius >= self.points[0] and cx - c1.radius <= self.points[2]:
+            if cy + c1.radius >= self.points[1] and cy - c1.radius <= self.points[3]:
                 return True
         return False
 
     def collisionParticle(self, p1):
         px = p1.position.x
-        py = p1.position._y
+        py = p1.position.y
         
-        if px >= self.x1 and px <= self.x2:
-            if py >= self.y1 and py <= self.y2:
+        if px >= self.points[0] and px <= self.points[2]:
+            if py >= self.points[1] and py <= self.points[3]:
                 return True
         return False

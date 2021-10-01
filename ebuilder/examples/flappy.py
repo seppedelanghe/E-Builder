@@ -1,6 +1,7 @@
 import pygame, math
 
 from ebuilder.models.objects import Triangle, Rect
+from ebuilder.models.particle import Particle
 from ebuilder.models.vector import Vector
 from ebuilder.models.environment import Env
 from ebuilder.services.utils import randomColor, randomInt
@@ -44,8 +45,18 @@ def moving_blocks():
 
     if (states['timer'] % 120) == 0:
         b1, b2 = make_walls()
-        env.addEntity(b1, f"b1_{states['timer']}")
-        env.addEntity(b2, f"b2_{states['timer']}")
+        env.addEntity(b1, f"block_1_{states['timer']}")
+        env.addEntity(b2, f"block_2_{states['timer']}")
+        
+def check_collision(entities: dict, agentKey: str):
+    global env
+
+    agent = entities[agentKey]
+
+    for (k, e) in entities.items():
+        if k != agentKey and e.collision(agent):
+            print('Game over! You hit a wall.')
+            env.running = False
 
 
 def events(events):
@@ -62,18 +73,20 @@ def events(events):
             if event.key == pygame.K_SPACE:
                 states['flapping'] = 0
 
+
 def update(entities: dict):
     global states
     bird = entities['bird']
 
     if states['flapping']:
-        bird.accelerate(Vector(0, -6))
+        bird.accelerate(Vector(0, -4))
 
     if states['delay'] > 0:
         states['flapping'] = 0
         states['delay'] -= 1
 
     moving_blocks()
+    check_collision(entities, 'bird')
 
     states['timer'] += 1
 
