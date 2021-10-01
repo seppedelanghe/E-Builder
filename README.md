@@ -37,6 +37,8 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#examples">Examples</a></li>
       </ul>
     </li>
     <li>
@@ -67,6 +69,72 @@ You could for example recreate a game you want to train an AI model for so you c
 * Python 3.8
 * PyGame
 
+
+### Features
+
+Currently the project allows you modify the following things:
+
+- Environment
+  - screen size
+  - fixed FPS
+  - Enable FPS Counter
+  - Background color
+
+- Supported objects
+  - Circle
+  - Rectangle
+  - Triangle
+  
+- Non physics objects:
+  - Line
+
+- Objects options
+  - position
+  - size
+  - color
+  - gravity
+  - bounce
+  - velocity (speed and direction)
+  - friction (fixed rate)
+  - gravitate to other object (based on mass)
+
+- Other
+  - spring functionality
+  - bounce of edges (with loss of momentum/velocity)
+
+
+### Examples
+
+This is a list of the current examples that showcase what e-builder can do.
+
+- __Bounce:__ 
+  - Bounce some balls (circles) around of the walls.
+  - Apply gravity to objects
+- __Edge:__ 
+  - Respawning an object on other side for continues loop of moving objects
+- __Flappy:__
+  - Bad clone of flappy bird
+  - Shows how the `events` and `updates` callbacks can be used
+- __Planest:__
+  - A planet gravitating to the sun
+  - Shows gravitateTo and velocity
+- __Removal:__
+  - Example on how you can remove entities from the environment after the have left the screen
+- __Reuse:__
+  - Similar to Removal, instead objects are reused and respawned at original location
+- __Simple:__
+  - Bare bone starting template with 1 object moving up
+  - This is the template for the Usage part in the README
+- __Spaceship:__
+  - Spaceship that can apply thrust and move forward
+  - Show how friction slowly slows down the object
+  - Shows how arrow keys can be used to control an objects movement
+- __Springs:__
+  - 3 circles being held under tension to create a shape
+  - Example of how to use the springs funciontion
+
+
+<br>
 
 <!-- GETTING STARTED -->
 ## Getting Started
